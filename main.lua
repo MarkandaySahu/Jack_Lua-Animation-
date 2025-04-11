@@ -54,6 +54,9 @@ function love.draw()
     if Jack.animation.direction=="right" then
         love.graphics.draw(Jack.sprite,quads[Jack.animation.frame],Jack.x,Jack.y)
     elseif Jack.animation.direction=="left" then
-        love.graphics.draw(Jack.sprite,quads[Jack.animation.frame],Jack.x,Jack.y,0,-1,1,quad_width,0)--this will make our quad sprites go flipped
+        love.graphics.draw(Jack.sprite,quads[Jack.animation.frame],Jack.x,Jack.y,
+         0,-1,1,-- 0 rotation, then the X and Y scales
+         quad_width,0-- the origin offsets relative to 0,0 on the sprite
+      )--this will make our quad sprites go flipped
     end
 end
